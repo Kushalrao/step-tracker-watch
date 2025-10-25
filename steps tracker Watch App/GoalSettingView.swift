@@ -11,6 +11,7 @@ struct GoalSettingView: View {
     @State private var goal: Double = 10000  // Start at first threshold
     @State private var showContinueButton = false
     @State private var scrollOffset: CGFloat = 0
+    @State private var isDigitalCrownActive = false
     
     let onGoalSet: (Int) -> Void
     
@@ -179,10 +180,16 @@ struct GoalSettingView: View {
                             let progress = Double(index) / Double(totalSpiralDots)
                             let position = getSpiralPosition(progress: progress)
                             
+                            // Calculate ripple effect for last 10 dots (only when digital crown is active)
+                            let distanceFromEnd = progressSpiralDots - 1 - index
+                            let isInRippleRange = distanceFromEnd < 10
+                            let rippleScale: CGFloat = isDigitalCrownActive && isInRippleRange ? (2.0 - CGFloat(distanceFromEnd) * 0.1) : 1.0
+                            
                             Circle()
                                 .fill(position.color)
-                                .frame(width: 4, height: 4)
+                                .frame(width: 4 * rippleScale, height: 4 * rippleScale)
                                 .offset(x: position.x, y: position.y)
+                                .animation(.easeOut(duration: 0.3), value: rippleScale)
                         }
                         
                         // Goal number with dynamic color
@@ -225,6 +232,17 @@ struct GoalSettingView: View {
             sensitivity: .medium,
             isContinuous: false
         )
+        .onChange(of: goal) { _, _ in
+            // Digital crown is being used
+            isDigitalCrownActive = true
+            
+            // Reset after a short delay (0.5 seconds of no movement)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                withAnimation(.easeOut(duration: 0.3)) {
+                    isDigitalCrownActive = false
+                }
+            }
+        }
         .onChange(of: scrollOffset) { _, newValue in
             withAnimation {
                 showContinueButton = newValue > 20
