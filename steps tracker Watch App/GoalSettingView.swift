@@ -187,7 +187,8 @@ struct GoalSettingView: View {
                             
                             Circle()
                                 .fill(position.color)
-                                .frame(width: 4 * rippleScale, height: 4 * rippleScale)
+                                .frame(width: 4, height: 4)
+                                .scaleEffect(rippleScale)
                                 .offset(x: position.x, y: position.y)
                                 .animation(.easeOut(duration: 0.3), value: rippleScale)
                         }
