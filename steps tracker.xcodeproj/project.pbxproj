@@ -1,0 +1,707 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55F5CEB22EABE41200D87237 /* steps tracker Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 55F5CEB12EABE41200D87237 /* steps tracker Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		55F5CEB32EABE41200D87237 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55F5CEA52EABE41200D87237 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55F5CEB02EABE41200D87237;
+			remoteInfo = "steps tracker Watch App";
+		};
+		55F5CEC12EABE41300D87237 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55F5CEA52EABE41200D87237 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55F5CEB02EABE41200D87237;
+			remoteInfo = "steps tracker Watch App";
+		};
+		55F5CECB2EABE41400D87237 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55F5CEA52EABE41200D87237 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55F5CEB02EABE41200D87237;
+			remoteInfo = "steps tracker Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		55F5CED72EABE41400D87237 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				55F5CEB22EABE41200D87237 /* steps tracker Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		55F5CEAB2EABE41200D87237 /* steps tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "steps tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55F5CEB12EABE41200D87237 /* steps tracker Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "steps tracker Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55F5CEC02EABE41300D87237 /* steps tracker Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "steps tracker Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55F5CECA2EABE41400D87237 /* steps tracker Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "steps tracker Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		55F5CEB52EABE41200D87237 /* steps tracker Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "steps tracker Watch App";
+			sourceTree = "<group>";
+		};
+		55F5CEC32EABE41300D87237 /* steps tracker Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "steps tracker Watch AppTests";
+			sourceTree = "<group>";
+		};
+		55F5CECD2EABE41400D87237 /* steps tracker Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "steps tracker Watch AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55F5CEAE2EABE41200D87237 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55F5CEBD2EABE41300D87237 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55F5CEC72EABE41400D87237 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55F5CEA42EABE41200D87237 = {
+			isa = PBXGroup;
+			children = (
+				55F5CEB52EABE41200D87237 /* steps tracker Watch App */,
+				55F5CEC32EABE41300D87237 /* steps tracker Watch AppTests */,
+				55F5CECD2EABE41400D87237 /* steps tracker Watch AppUITests */,
+				55F5CEAC2EABE41200D87237 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		55F5CEAC2EABE41200D87237 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55F5CEAB2EABE41200D87237 /* steps tracker.app */,
+				55F5CEB12EABE41200D87237 /* steps tracker Watch App.app */,
+				55F5CEC02EABE41300D87237 /* steps tracker Watch AppTests.xctest */,
+				55F5CECA2EABE41400D87237 /* steps tracker Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55F5CEAA2EABE41200D87237 /* steps tracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55F5CED82EABE41400D87237 /* Build configuration list for PBXNativeTarget "steps tracker" */;
+			buildPhases = (
+				55F5CEA92EABE41200D87237 /* Resources */,
+				55F5CED72EABE41400D87237 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55F5CEB42EABE41200D87237 /* PBXTargetDependency */,
+			);
+			name = "steps tracker";
+			packageProductDependencies = (
+			);
+			productName = "steps tracker";
+			productReference = 55F5CEAB2EABE41200D87237 /* steps tracker.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		55F5CEB02EABE41200D87237 /* steps tracker Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55F5CED42EABE41400D87237 /* Build configuration list for PBXNativeTarget "steps tracker Watch App" */;
+			buildPhases = (
+				55F5CEAD2EABE41200D87237 /* Sources */,
+				55F5CEAE2EABE41200D87237 /* Frameworks */,
+				55F5CEAF2EABE41200D87237 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				55F5CEB52EABE41200D87237 /* steps tracker Watch App */,
+			);
+			name = "steps tracker Watch App";
+			packageProductDependencies = (
+			);
+			productName = "steps tracker Watch App";
+			productReference = 55F5CEB12EABE41200D87237 /* steps tracker Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		55F5CEBF2EABE41300D87237 /* steps tracker Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55F5CEDB2EABE41400D87237 /* Build configuration list for PBXNativeTarget "steps tracker Watch AppTests" */;
+			buildPhases = (
+				55F5CEBC2EABE41300D87237 /* Sources */,
+				55F5CEBD2EABE41300D87237 /* Frameworks */,
+				55F5CEBE2EABE41300D87237 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55F5CEC22EABE41300D87237 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				55F5CEC32EABE41300D87237 /* steps tracker Watch AppTests */,
+			);
+			name = "steps tracker Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "steps tracker Watch AppTests";
+			productReference = 55F5CEC02EABE41300D87237 /* steps tracker Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		55F5CEC92EABE41400D87237 /* steps tracker Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55F5CEDE2EABE41400D87237 /* Build configuration list for PBXNativeTarget "steps tracker Watch AppUITests" */;
+			buildPhases = (
+				55F5CEC62EABE41400D87237 /* Sources */,
+				55F5CEC72EABE41400D87237 /* Frameworks */,
+				55F5CEC82EABE41400D87237 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55F5CECC2EABE41400D87237 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				55F5CECD2EABE41400D87237 /* steps tracker Watch AppUITests */,
+			);
+			name = "steps tracker Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "steps tracker Watch AppUITests";
+			productReference = 55F5CECA2EABE41400D87237 /* steps tracker Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55F5CEA52EABE41200D87237 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					55F5CEAA2EABE41200D87237 = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+					55F5CEB02EABE41200D87237 = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+					55F5CEBF2EABE41300D87237 = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = 55F5CEB02EABE41200D87237;
+					};
+					55F5CEC92EABE41400D87237 = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = 55F5CEB02EABE41200D87237;
+					};
+				};
+			};
+			buildConfigurationList = 55F5CEA82EABE41200D87237 /* Build configuration list for PBXProject "steps tracker" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55F5CEA42EABE41200D87237;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 55F5CEAC2EABE41200D87237 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55F5CEAA2EABE41200D87237 /* steps tracker */,
+				55F5CEB02EABE41200D87237 /* steps tracker Watch App */,
+				55F5CEBF2EABE41300D87237 /* steps tracker Watch AppTests */,
+				55F5CEC92EABE41400D87237 /* steps tracker Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55F5CEA92EABE41200D87237 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55F5CEAF2EABE41200D87237 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55F5CEBE2EABE41300D87237 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55F5CEC82EABE41400D87237 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55F5CEAD2EABE41200D87237 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55F5CEBC2EABE41300D87237 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55F5CEC62EABE41400D87237 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55F5CEB42EABE41200D87237 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55F5CEB02EABE41200D87237 /* steps tracker Watch App */;
+			targetProxy = 55F5CEB32EABE41200D87237 /* PBXContainerItemProxy */;
+		};
+		55F5CEC22EABE41300D87237 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55F5CEB02EABE41200D87237 /* steps tracker Watch App */;
+			targetProxy = 55F5CEC12EABE41300D87237 /* PBXContainerItemProxy */;
+		};
+		55F5CECC2EABE41400D87237 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55F5CEB02EABE41200D87237 /* steps tracker Watch App */;
+			targetProxy = 55F5CECB2EABE41400D87237 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		55F5CED22EABE41400D87237 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 4GAH3YJNV9;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		55F5CED32EABE41400D87237 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 4GAH3YJNV9;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		55F5CED52EABE41400D87237 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "steps tracker Watch App/steps tracker Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4GAH3YJNV9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "steps tracker";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app needs access to your step count data to display your daily steps.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kushal.steps-tracker.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		55F5CED62EABE41400D87237 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "steps tracker Watch App/steps tracker Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4GAH3YJNV9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "steps tracker";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app needs access to your step count data to display your daily steps.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kushal.steps-tracker.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		55F5CED92EABE41400D87237 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "steps tracker Watch App/steps tracker Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4GAH3YJNV9;
+				INFOPLIST_KEY_CFBundleDisplayName = "steps tracker";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app needs access to your step count data to display your daily steps.";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kushal.steps-tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		55F5CEDA2EABE41400D87237 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "steps tracker Watch App/steps tracker Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4GAH3YJNV9;
+				INFOPLIST_KEY_CFBundleDisplayName = "steps tracker";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app needs access to your step count data to display your daily steps.";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kushal.steps-tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55F5CEDC2EABE41400D87237 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_ENTITLEMENTS = "steps tracker Watch App/steps tracker Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4GAH3YJNV9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kushal.steps-tracker-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/steps tracker Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/steps tracker Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		55F5CEDD2EABE41400D87237 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_ENTITLEMENTS = "steps tracker Watch App/steps tracker Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4GAH3YJNV9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kushal.steps-tracker-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/steps tracker Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/steps tracker Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		55F5CEDF2EABE41400D87237 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "steps tracker Watch App/steps tracker Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4GAH3YJNV9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kushal.steps-tracker-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "steps tracker Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		55F5CEE02EABE41400D87237 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "steps tracker Watch App/steps tracker Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4GAH3YJNV9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kushal.steps-tracker-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "steps tracker Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55F5CEA82EABE41200D87237 /* Build configuration list for PBXProject "steps tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55F5CED22EABE41400D87237 /* Debug */,
+				55F5CED32EABE41400D87237 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55F5CED42EABE41400D87237 /* Build configuration list for PBXNativeTarget "steps tracker Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55F5CED52EABE41400D87237 /* Debug */,
+				55F5CED62EABE41400D87237 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55F5CED82EABE41400D87237 /* Build configuration list for PBXNativeTarget "steps tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55F5CED92EABE41400D87237 /* Debug */,
+				55F5CEDA2EABE41400D87237 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55F5CEDB2EABE41400D87237 /* Build configuration list for PBXNativeTarget "steps tracker Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55F5CEDC2EABE41400D87237 /* Debug */,
+				55F5CEDD2EABE41400D87237 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55F5CEDE2EABE41400D87237 /* Build configuration list for PBXNativeTarget "steps tracker Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55F5CEDF2EABE41400D87237 /* Debug */,
+				55F5CEE02EABE41400D87237 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 55F5CEA52EABE41200D87237 /* Project object */;
+}
