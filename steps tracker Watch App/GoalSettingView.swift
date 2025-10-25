@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GoalSettingView: View {
-    @State private var goal: Double = 12000  // Start in second layer to see spiral effect
+    @State private var goal: Double = 10000  // Start at first threshold
     @State private var showContinueButton = false
     @State private var scrollOffset: CGFloat = 0
     
@@ -17,6 +17,11 @@ struct GoalSettingView: View {
     private let minGoal: Double = 200
     private let maxGoal: Double = 40000  // Support up to 4 layers (40,000 steps)
     private let stepSize: Double = 200
+    
+    // Continuous spiral properties - MUST BE DEFINED FIRST
+    private let layerThreshold: Double = 10000
+    private let maxLayers: Int = 4 // 1 base layer + 3 additional layers
+    private let spiralTurns: Double = 2.0 // Number of turns per layer
     
     // Computed properties for styling
     private var isOvershooting: Bool {
@@ -34,12 +39,37 @@ struct GoalSettingView: View {
         return layerColors[min(layer, layerColors.count - 1)]
     }
     
-    // Dynamic spiral properties
-    private let layerThreshold: Double = 10000
-    private let maxLayers: Int = 4 // 1 base layer + 3 additional layers
-    
     private var currentLayer: Int {
         min(Int(goal / layerThreshold), maxLayers - 1)
+    }
+    
+    // Show all layers up to current progress (always add layers outward)
+    private var visibleLayers: Int {
+        min(currentLayer + 1, maxLayers) // +1 to include the layer we're currently on
+    }
+    
+    private var zoomScale: CGFloat {
+        // Calculate if spiral fits on screen
+        // Watch screen allows much more space - be generous before zooming
+        let maxVisibleRadius: CGFloat = 120 // Increased significantly to avoid early zoom
+        
+        // Calculate the ACTUAL outer radius of the outermost layer
+        let baseRadius: CGFloat = 65
+        let layerSpacing: CGFloat = 14
+        // The outermost layer index is (visibleLayers - 1), plus add full spacing for that layer
+        let currentOuterRadius = baseRadius + CGFloat(visibleLayers - 1) * layerSpacing + layerSpacing
+        
+        // Only zoom out if it doesn't fit
+        if currentOuterRadius > maxVisibleRadius {
+            return maxVisibleRadius / currentOuterRadius
+        } else {
+            return 1.0 // No zoom needed, keep it 100%
+        }
+    }
+    
+    // No offset needed - keep everything centered
+    private var zoomOffset: CGSize {
+        return CGSize.zero
     }
     
     private var layerProgress: Double {
@@ -47,41 +77,79 @@ struct GoalSettingView: View {
         return min(layerGoal / layerThreshold, 1.0)
     }
     
-    private var dotSize: CGFloat {
-        let baseSize: CGFloat = 4
-        let layerBonus: CGFloat = CGFloat(currentLayer) * 0.5
-        return baseSize + layerBonus
+    // Get the color for the current progress (last dot color)
+    private var currentProgressColor: Color {
+        return getSmoothColor(layer: currentLayer, progress: layerProgress)
     }
     
-    private var dotSpacing: CGFloat {
-        let baseSpacing: CGFloat = 8
-        let layerBonus: CGFloat = CGFloat(currentLayer) * 1.0
-        return baseSpacing + layerBonus
+    // Calculate spiral position for a given progress (0.0 to 1.0)
+    private func getSpiralPosition(progress: Double) -> (x: CGFloat, y: CGFloat, layer: Int, color: Color) {
+        let totalProgress = progress * Double(visibleLayers) * spiralTurns
+        
+        // Determine which layer we're in
+        let layer = Int(totalProgress / spiralTurns)
+        let layerProgress = (totalProgress.truncatingRemainder(dividingBy: spiralTurns)) / spiralTurns
+        
+        // Calculate radius - FIXED spacing, zoom handles the fitting
+        let baseRadius: CGFloat = 65 // FIXED inner breathing room
+        let layerSpacing: CGFloat = 14 // FIXED layer spacing - zoom will handle fitting
+        let radius = baseRadius + CGFloat(layer) * layerSpacing + CGFloat(layerProgress) * layerSpacing
+        
+        // Calculate angle (continuous spiral)
+        let angle = totalProgress * 2 * Double.pi
+        
+        // Convert to Cartesian coordinates
+        let x = CGFloat(cos(angle)) * radius
+        let y = CGFloat(sin(angle)) * radius
+        
+        // Smooth color transition based on layer progress
+        let color = getSmoothColor(layer: layer, progress: layerProgress)
+        
+        return (x: x, y: y, layer: layer, color: color)
     }
     
-    private func getLayerRadius(for layer: Int) -> CGFloat {
-        let baseRadius: CGFloat = 60
-        let layerSpacing: CGFloat = 25
-        return baseRadius + CGFloat(layer) * layerSpacing
+    // Smooth color interpolation between layers - rainbow gradient
+    private func getSmoothColor(layer: Int, progress: Double) -> Color {
+        let layerColors: [Color] = [
+            Color.red,      // Layer 0 start
+            Color.orange,   // Layer 0-1 transition
+            Color.yellow,   // Layer 1
+            Color.green,    // Layer 2
+            Color.cyan,     // Layer 2-3 transition
+            Color.blue,     // Layer 3
+            Color.purple,   // Layer 3-4 transition
+            Color.pink      // Layer 4 (overflow)
+        ]
+        
+        // Map layer and progress to color gradient
+        // Each layer covers 2 color transitions for smooth rainbow effect
+        let colorIndex = Double(layer) * 2.0 + progress * 2.0
+        let currentColorIndex = Int(colorIndex)
+        let nextColorIndex = min(currentColorIndex + 1, layerColors.count - 1)
+        let colorProgress = colorIndex - Double(currentColorIndex)
+        
+        let currentColorIdx = min(currentColorIndex, layerColors.count - 1)
+        let nextColorIdx = min(nextColorIndex, layerColors.count - 1)
+        
+        // Interpolate between current and next color
+        return layerColors[currentColorIdx].interpolated(to: layerColors[nextColorIdx], amount: colorProgress)
     }
     
-    private func getTotalDots(for layer: Int) -> Int {
-        let radius = getLayerRadius(for: layer)
-        let circumference = Double.pi * Double(radius * 2)
-        return Int(circumference / Double(dotSpacing))
+    // Calculate total dots for continuous spiral
+    private var totalSpiralDots: Int {
+        let totalTurns = Double(visibleLayers) * spiralTurns
+        let baseRadius: CGFloat = 65 // FIXED
+        let layerSpacing: CGFloat = 14 // FIXED - match getSpiralPosition
+        let avgRadius = baseRadius + CGFloat(visibleLayers) * layerSpacing / 2
+        let totalCircumference = Double.pi * Double(avgRadius) * 2 * totalTurns
+        return Int(totalCircumference / 8.0) // 8pt spacing
     }
     
-    private func getProgressDots(for layer: Int) -> Int {
-        if layer < currentLayer {
-            // Previous layers are completely filled
-            return getTotalDots(for: layer)
-        } else if layer == currentLayer {
-            // Current layer fills based on progress
-            return Int(Double(getTotalDots(for: layer)) * layerProgress)
-        } else {
-            // Future layers are empty
-            return 0
-        }
+    // Calculate progress dots for continuous spiral
+    private var progressSpiralDots: Int {
+        let totalProgress = (Double(currentLayer) + layerProgress) * spiralTurns
+        let totalTurns = Double(visibleLayers) * spiralTurns
+        return Int(Double(totalSpiralDots) * (totalProgress / totalTurns))
     }
     
     var body: some View {
@@ -93,47 +161,41 @@ struct GoalSettingView: View {
                 VStack {
                     Spacer()
                     
-                    // Dynamic Spiral Circle - Centered
+                    // Dynamic Zoom Spiral - Centered
                     ZStack {
-                        // Render each layer
-                        ForEach(0..<maxLayers, id: \.self) { layer in
-                            let radius = getLayerRadius(for: layer)
-                            let totalDots = getTotalDots(for: layer)
-                            let progressDots = getProgressDots(for: layer)
-                            let layerDotSize = dotSize
+                        // Background dots (unfilled portion of spiral)
+                        ForEach(progressSpiralDots..<totalSpiralDots, id: \.self) { index in
+                            let progress = Double(index) / Double(totalSpiralDots)
+                            let position = getSpiralPosition(progress: progress)
                             
-                            // Background dots (unfilled portion) for this layer
-                            ForEach(progressDots..<totalDots, id: \.self) { index in
-                                Circle()
-                                    .fill(Color.white.opacity(0.2))
-                                    .frame(width: layerDotSize, height: layerDotSize)
-                                    .offset(y: -radius)
-                                    .rotationEffect(.degrees(Double(index) * 360.0 / Double(totalDots)))
-                            }
-                            
-                            // Progress dots (filled portion with gradient) for this layer
-                            ForEach(0..<progressDots, id: \.self) { index in
-                                Circle()
-                                    .fill(
-                                        LinearGradient(
-                                            gradient: Gradient(colors: getGradientColors(for: layer)),
-                                            startPoint: .topLeading,
-                                            endPoint: .bottomTrailing
-                                        )
-                                    )
-                                    .frame(width: layerDotSize, height: layerDotSize)
-                                    .offset(y: -radius)
-                                    .rotationEffect(.degrees(Double(index) * 360.0 / Double(totalDots)))
-                            }
+                            Circle()
+                                .fill(Color.white.opacity(0.2))
+                                .frame(width: 4, height: 4)
+                                .offset(x: position.x, y: position.y)
                         }
                         
-                        // Goal number
+                        // Progress dots (filled portion of spiral)
+                        ForEach(0..<progressSpiralDots, id: \.self) { index in
+                            let progress = Double(index) / Double(totalSpiralDots)
+                            let position = getSpiralPosition(progress: progress)
+                            
+                            Circle()
+                                .fill(position.color)
+                                .frame(width: 4, height: 4)
+                                .offset(x: position.x, y: position.y)
+                        }
+                        
+                        // Goal number with dynamic color
                         Text("\(Int(goal))")
                             .font(.system(size: currentLayer > 0 ? 28 : 24, weight: currentLayer > 0 ? .black : .medium, design: .rounded))
-                            .foregroundColor(.white)
+                            .foregroundColor(currentProgressColor)
                             .animation(.easeInOut(duration: 0.3), value: currentLayer)
+                            .animation(.easeInOut(duration: 0.5), value: currentProgressColor)
                         
                     }
+                    .scaleEffect(zoomScale)
+                    .offset(zoomOffset)
+                    .animation(.easeInOut(duration: 0.8), value: zoomScale)
                     
                     Spacer()
                     
@@ -177,6 +239,26 @@ struct GoalSettingView: View {
                     scrollOffset = 0
                 }
         )
+    }
+}
+
+// Color interpolation extension for smooth transitions
+extension Color {
+    func interpolated(to endColor: Color, amount: Double) -> Color {
+        let amount = min(max(amount, 0.0), 1.0) // Clamp between 0 and 1
+        
+        // Convert colors to RGB components
+        guard let startComponents = UIColor(self).cgColor.components,
+              let endComponents = UIColor(endColor).cgColor.components else {
+            return self
+        }
+        
+        // Interpolate each component
+        let r = startComponents[0] + (endComponents[0] - startComponents[0]) * amount
+        let g = startComponents[1] + (endComponents[1] - startComponents[1]) * amount
+        let b = startComponents[2] + (endComponents[2] - startComponents[2]) * amount
+        
+        return Color(red: r, green: g, blue: b)
     }
 }
 
